@@ -5,4 +5,4 @@
  * @link https://github.com/parkjs814/DuoCoder
  * @license MIT
  */
-body{width:100%}
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");body{padding:0;margin:0;background:#4b3c30;font-family:'Ubuntu Mono', monospace;font-size:24pt;color:#ab9a8b;text-align:center}
