@@ -13,6 +13,14 @@ html, body {
   box-sizing: border-box;
 }
 
+* {
+  text-decoration: none;
+}
+
+a {
+  color: $primary-light;
+}
+
 body {
   background: $primary-normal;
   font-family: 'Ubuntu Mono', monospace;

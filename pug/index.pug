@@ -3,7 +3,6 @@ extends base
 block css
     link(rel='stylesheet', href='main.css')
 
-
 block body
     .fullscreen
         - var langs = {'java': 'Java', 'python': 'Python', 'cpp': 'C++', 'ecmascript': 'ECMAScript', 'idk': 'Nada.'}
@@ -12,7 +11,7 @@ block body
         h3 1| Which one are you familiar with?
         .lang-container#lang-from
             - for (var lang in langs) {
-            .lang
+            a.lang(href='#dots')
                 .logo(style='background-image: url("./images/lang_' + lang + '.png")')
                     .logo.mono(style='background-image: url("./images/lang_' + lang + '_mono.png")')
                 .name= langs[lang]
@@ -23,16 +22,18 @@ block body
                 | </br>
                 | &nbsp;
             h3 &nbsp;
-        .stick-to-bottom.real
+        .stick-to-bottom.real.focused.unfocused#dots
             h3
                 | .</br>
                 | .</br>
                 | .
             h3 2| Which one do you want to learn?
-    .lang-container#lang-to
+    .lang-container.focused.unfocused#lang-to
         - for (var lang in langs) {
         .lang
             .logo(style='background-image: url("./images/lang_' + lang + '.png")')
                 .logo.mono(style='background-image: url("./images/lang_' + lang + '_mono.png")')
             .name= langs[lang]
         - }
+    .footer
+        h5: a(href='http://jasonpark.me/') jasonpark.me
