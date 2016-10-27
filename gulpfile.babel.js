@@ -38,7 +38,7 @@ const banner = [
 ].join('\n');
 
 // Build Directories
-const cssDir = path.join(__dirname, 'css', '**', '*.sass');
+const cssDir = path.join(__dirname, 'css', '**', '*.scss');
 const jsDir = path.join(__dirname, 'js', '**', '*.js');
 const pugDir = path.join(__dirname, 'pug', '**', '*.pug');
 
@@ -90,7 +90,7 @@ gulp.task('build-pug', () => {
 });
 
 // Build
-gulp.task('build', ['build-css', 'build-js', 'compile-pug']);
+gulp.task('build', ['build-css', 'build-js', 'build-pug']);
 
 // Server
 gulp.task('connect', function () {
