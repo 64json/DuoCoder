@@ -8,3 +8,27 @@ body {
   font-size: 1.5em;
 }
 
+.lang {
+  display: inline-block;
+  margin: 24px;
+  .logo {
+    width: 196px;
+    height: 196px;
+    background: no-repeat center;
+    background-size: contain;
+  }
+  .name {
+    margin-top: 16px;
+    width: 196px;
+  }
+  &:hover {
+    .logo.mono {
+      opacity: 0;
+      transition: opacity .5s;
+    }
+    .name {
+      color: white;
+      transition: color .5s;
+    }
+  }
+}

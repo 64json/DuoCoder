@@ -5,5 +5,13 @@ block css
 
 block body
     h1 #DuoCoder
-    div.title-divider _
+    .title-divider _
     h3 1| Which one are you familiar with?
+    .lang-container
+        - var langs = {'java': 'Java', 'python': 'Python', 'cpp': 'C++', 'ecmascript': 'ECMAScript', 'idk': 'Nada.'}
+        - for (var lang in langs) {
+        .lang
+            .logo(style='background-image: url("./images/lang_' + lang + '.png")')
+                .logo.mono(style='background-image: url("./images/lang_' + lang + '_mono.png")')
+            .name= langs[lang]
+        - }
