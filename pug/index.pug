@@ -3,12 +3,33 @@ extends base
 block css
     link(rel='stylesheet', href='main.css')
 
+
 block body
-    h1 #DuoCoder
-    .title-divider _
-    h3 1| Which one are you familiar with?
-    .lang-container
+    .fullscreen
         - var langs = {'java': 'Java', 'python': 'Python', 'cpp': 'C++', 'ecmascript': 'ECMAScript', 'idk': 'Nada.'}
+        h1 #DuoCoder
+        .title-divider _
+        h3 1| Which one are you familiar with?
+        .lang-container#lang-from
+            - for (var lang in langs) {
+            .lang
+                .logo(style='background-image: url("./images/lang_' + lang + '.png")')
+                    .logo.mono(style='background-image: url("./images/lang_' + lang + '_mono.png")')
+                .name= langs[lang]
+            - }
+        .stick-to-bottom.fake
+            h3
+                | </br>
+                | </br>
+                | &nbsp;
+            h3 &nbsp;
+        .stick-to-bottom.real
+            h3
+                | .</br>
+                | .</br>
+                | .
+            h3 2| Which one do you want to learn?
+    .lang-container#lang-to
         - for (var lang in langs) {
         .lang
             .logo(style='background-image: url("./images/lang_' + lang + '.png")')

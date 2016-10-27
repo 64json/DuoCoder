@@ -1,5 +1,11 @@
 body {
+}
+
+.fullscreen {
   padding-top: .2em;
+  &.full {
+    height: 100%;
+  }
 }
 
 .title-divider {
@@ -12,16 +18,23 @@ body {
   display: inline-block;
   margin: 24px;
   .logo {
-    width: 196px;
-    height: 196px;
+    width: 168px;
+    height: 168px;
     background: no-repeat center;
     background-size: contain;
+    visibility: hidden;
+  }
+  .logo.mono {
+    visibility: visible;
   }
   .name {
     margin-top: 16px;
-    width: 196px;
+    width: 168px;
   }
   &:hover {
+    .logo {
+      visibility: visible;
+    }
     .logo.mono {
       opacity: 0;
       transition: opacity .5s;
@@ -31,4 +44,19 @@ body {
       transition: color .5s;
     }
   }
+}
+
+.unfocused {
+  opacity: .2;
+}
+
+.stick-to-bottom.stick, .stick-to-bottom.fake {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.stick-to-bottom.fake {
+  visibility: hidden;
 }

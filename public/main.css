@@ -5,4 +5,4 @@
  * @link https://github.com/parkjs814/DuoCoder
  * @license MIT
  */
-body{padding-top:.2em}.title-divider{margin-top:-1.2em;margin-bottom:-.2em;font-size:1.5em}.lang{display:inline-block;margin:24px}.lang .logo{width:196px;height:196px;background:no-repeat center;background-size:contain}.lang .name{margin-top:16px;width:196px}.lang:hover .logo.mono{opacity:0;transition:opacity .5s}.lang:hover .name{color:white;transition:color .5s}
+.fullscreen{padding-top:.2em}.fullscreen.full{height:100%}.title-divider{margin-top:-1.2em;margin-bottom:-.2em;font-size:1.5em}.lang{display:inline-block;margin:24px}.lang .logo{width:168px;height:168px;background:no-repeat center;background-size:contain;visibility:hidden}.lang .logo.mono{visibility:visible}.lang .name{margin-top:16px;width:168px}.lang:hover .logo{visibility:visible}.lang:hover .logo.mono{opacity:0;transition:opacity .5s}.lang:hover .name{color:white;transition:color .5s}.unfocused{opacity:.2}.stick-to-bottom.stick,.stick-to-bottom.fake{overflow:hidden;position:absolute;bottom:0;width:100%}.stick-to-bottom.fake{visibility:hidden}
