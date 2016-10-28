@@ -1,0 +1,59 @@
+@import 'base';
+
+.sidemenu {
+  position: absolute;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: $primary-dark;
+}
+
+.panel {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  box-shadow: -4px 0 4px 0px rgba(0, 0, 0, .15);
+}
+
+#lang-from {
+  left: 20%;
+}
+
+#lang-to {
+  left: 60%;
+}
+
+.bar {
+  height: 64px;
+  line-height: 64px;
+  background: $primary-normal;
+  color: $primary-light;
+  font-weight: bold;
+}
+
+.panel .bar {
+  font-size: .8em;
+}
+
+.code-container {
+  background: $primary-dark;
+  height: 50%;
+}
+
+.desc-container {
+  height: 50%;
+}
+
+.index {
+  text-align: left;
+  font-size: .7em;
+  list-style: none;
+  margin: 0px;
+  padding: 28px;
+  li {
+    margin-top: 8px;
+    &.active {
+      color: white
+    }
+  }
+}
