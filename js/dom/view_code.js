@@ -1,10 +1,6 @@
-const ace_lang = {
-  'cpp': 'c_cpp',
-  'py': 'python'
-};
-
-module.exports = (index, source, language) => {
-  const $code = $(`.code:eq(${index})`);
+module.exports = (index, language, source) => {
+  const $panel = $(`.panel:eq(${index})`);
+  const $code = $panel.find('.code');
   const matchings = [];
   source = source.replace(/#(\d+){\[([^(\]})]*)\]}/g, (match, num, content) => {
     matchings.push([content, num]);
@@ -15,7 +11,7 @@ module.exports = (index, source, language) => {
 
   var editor = ace.edit($code.attr('id'));
   editor.setTheme('ace/theme/monokai');
-  editor.getSession().setMode(`ace/mode/${ace_lang[language]}`);
+  editor.getSession().setMode(`ace/mode/${language.ace}`);
 
   editor.renderer.on('afterRender', () => {
     var i = 0;
