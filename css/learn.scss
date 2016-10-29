@@ -76,11 +76,12 @@
   font-size: .7em;
   list-style: none;
   margin: 0px;
-  padding: 28px;
+  padding: 16px 28px;
   li {
-    margin-top: 8px;
+    margin-top: 12px;
+    font-weight: bold;
     &.active {
-      color: white
+      color: $primary-lighter;
     }
   }
 }
