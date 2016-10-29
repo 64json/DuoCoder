@@ -68,22 +68,37 @@
   }
 }
 
-.index {
+#index {
   position: absolute;
   top: 64px;
   bottom: 64px;
   text-align: left;
   font-size: .7em;
   list-style: none;
-  margin: 0px;
+  margin: 0;
   padding: 16px 28px;
-  li {
+  overflow: scroll;
+  & > li {
     margin-top: 12px;
     font-weight: bold;
     &.active {
       color: $primary-lighter;
     }
   }
+}
+
+#index .sub {
+  display: none;
+  font-size: .9em;
+  margin-bottom: 24px;
+  padding-left: 32px;
+  li {
+    margin-top: 8px;
+  }
+}
+
+#index > li.active + .sub {
+  display: block;
 }
 
 .button {
