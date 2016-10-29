@@ -1,3 +1,3 @@
 Python
 Variables
-Definition
+Boolean Types

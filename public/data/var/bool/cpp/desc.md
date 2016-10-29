@@ -1,3 +1,3 @@
 C++
 Variables
-Definition
+Boolean Types
