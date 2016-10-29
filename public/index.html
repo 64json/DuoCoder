@@ -2,4 +2,35 @@
 </br>
 &nbsp;</h3><h3>&nbsp;</h3></div><div class="stick-to-bottom real focused unfocused" id="dots"><h3>.</br>
 .</br>
-.</h3><h3>2| Which one do you want to learn?</h3></div></div><div class="lang-container focused unfocused" id="lang-to"><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_java.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_java_mono.png&quot;)"></div></div><div class="name">Java</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_python.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_python_mono.png&quot;)"></div></div><div class="name">Python</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_cpp.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_cpp_mono.png&quot;)"></div></div><div class="name">C++</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_ecmascript.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_ecmascript_mono.png&quot;)"></div></div><div class="name">ECMAScript</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_idk.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_idk_mono.png&quot;)"></div></div><div class="name">Nada.</div></a></div><div class="footer"><h5><a href="http://jasonpark.me/">jasonpark.me</a></h5></div><script>DOM.setupMain();</script></body></html>
+.</h3><h3>2| Which one do you want to learn?</h3></div></div><div class="lang-container focused unfocused" id="lang-to"><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_java.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_java_mono.png&quot;)"></div></div><div class="name">Java</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_python.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_python_mono.png&quot;)"></div></div><div class="name">Python</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_cpp.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_cpp_mono.png&quot;)"></div></div><div class="name">C++</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_ecmascript.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_ecmascript_mono.png&quot;)"></div></div><div class="name">ECMAScript</div></a><a class="lang" href="./learn.html"><div class="logo" style="background-image: url(&quot;./images/lang_idk.png&quot;)"><div class="logo mono" style="background-image: url(&quot;./images/lang_idk_mono.png&quot;)"></div></div><div class="name">Nada.</div></a></div><div class="footer"><h5><a href="http://jasonpark.me/">jasonpark.me</a></h5></div><script>var $stick_to_bottom_fake = $('.stick-to-bottom.fake');
+var $stick_to_bottom_real = $('.stick-to-bottom.real');
+var $lang_from = $('#lang-from');
+var $fullscreen = $('.fullscreen');
+var onResize = function () {
+    var top = $lang_from.offset().top + $lang_from.height();
+    var bottom = $stick_to_bottom_fake.offset().top;
+    $fullscreen.toggleClass('full', top < bottom);
+    $stick_to_bottom_real.toggleClass('stick', top < bottom)
+};
+onResize();
+$(window).resize(onResize);
+
+$('a[href*="#"]:not([href="#"])').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 500);
+            return false;
+        }
+    }
+});
+
+var $unfocused = $('.focused');
+var onScroll = function () {
+    $unfocused.toggleClass('unfocused', $(document).scrollTop() <= 168);
+};
+onScroll();
+$(window).scroll(onScroll);</script></body></html>

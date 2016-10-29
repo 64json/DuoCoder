@@ -79,6 +79,7 @@
   padding: 16px 28px;
   overflow: scroll;
   & > li {
+    cursor: pointer;
     margin-top: 12px;
     font-weight: bold;
     &.active {
@@ -92,7 +93,8 @@
   font-size: .9em;
   margin-bottom: 24px;
   padding-left: 32px;
-  li {
+  & > li {
+    cursor: pointer;
     margin-top: 8px;
   }
 }
