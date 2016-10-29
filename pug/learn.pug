@@ -3,6 +3,9 @@ extends base
 block css
     link(rel='stylesheet', href='learn.css')
 
+block js
+    script(type='text/javascript', src='ace/ace.js')
+
 block body
     .sidemenu
         .bar #DuoCoder
@@ -18,8 +21,12 @@ block body
     .panel#lang-from
         .code-container
             .bar EMCAScript
+            .code#code-from
         .desc-container
     .panel#lang-to
         .code-container
             .bar Python
+            .code#code-to
         .desc-container
+    script.
+        DOM.setupLearn();

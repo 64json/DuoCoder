@@ -36,8 +36,21 @@
 }
 
 .code-container {
+  position: absolute;
   background: $primary-dark;
   height: 50%;
+  width: 100%;
+  .code {
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: scroll;
+    font-size: .6em;
+    text-align: left;
+    padding: 24px;
+  }
 }
 
 .desc-container {
@@ -45,6 +58,9 @@
 }
 
 .index {
+  position: absolute;
+  top: 64px;
+  bottom: 64px;
   text-align: left;
   font-size: .7em;
   list-style: none;
@@ -59,5 +75,16 @@
 }
 
 .button {
-  font-size: .6em;
+  font-size: .75em;
+  color: white;
+}
+
+#next {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.match.selected {
+  background: rgba(0, 255, 0, .5);
 }
