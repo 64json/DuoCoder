@@ -46,15 +46,26 @@
     bottom: 0;
     left: 0;
     right: 0;
+    font-size: .6em;
+  }
+}
+
+.desc-container {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 100%;
+  .desc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     overflow: scroll;
     font-size: .6em;
     text-align: left;
     padding: 24px;
   }
-}
-
-.desc-container {
-  height: 50%;
 }
 
 .index {

@@ -1,13 +1,13 @@
-module.exports = (index, language, source) => {
+module.exports = (index, language, code) => {
   const $panel = $(`.panel:eq(${index})`);
   const $code = $panel.find('.code');
   const matchings = [];
-  source = source.replace(/#(\d+){\[([^(\]})]*)\]}/g, (match, num, content) => {
+  code = code.replace(/#(\d+){\[([^(\]})]*)\]}/g, (match, num, content) => {
     matchings.push([content, num]);
     return content;
   });
   matchings.push(['', '']);
-  $code.html(source);
+  $code.html(code);
 
   var editor = ace.edit($code.attr('id'));
   editor.setTheme('ace/theme/monokai');

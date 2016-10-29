@@ -1,5 +1,7 @@
-const loadSource = require('./load_source');
+const loadCode = require('./load_code');
+const loadDesc = require('./load_desc');
 
 module.exports = {
-  loadSource
+  loadCode,
+  loadDesc
 };

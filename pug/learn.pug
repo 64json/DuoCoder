@@ -5,6 +5,7 @@ block css
 
 block js
     script(type='text/javascript', src='ace/ace.js')
+    script(type='text/javascript', src='markdown.min.js')
 
 block body
     .sidemenu
@@ -23,10 +24,12 @@ block body
             .bar.title
             .code#code-from
         .desc-container
+            .desc
     .panel#lang-to
         .code-container
             .bar.title
             .code#code-to
         .desc-container
+            .desc
     script.
         DOM.setupLearn();

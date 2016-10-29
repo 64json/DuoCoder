@@ -28,9 +28,12 @@ const categories = [
 
 const setLanguage = (index, category, language) => {
   DOM.setLanguage(index, language);
-  Server.loadSource(category, language).then((source) => {
-    DOM.viewCode(index, language, source);
+  Server.loadCode(category, language).then((code) => {
+    DOM.viewCode(index, language, code);
   });
+  Server.loadDesc(category, language).then((desc) => {
+    DOM.viewDesc(index, desc)
+  })
 };
 
 $(() => {
