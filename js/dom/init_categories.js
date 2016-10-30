@@ -1,16 +1,21 @@
+const RSVP = require('rsvp');
 const Server = require('../server');
 const viewCode = require('./view_code');
 const viewDesc = require('./view_desc');
 
 const languages = Server.getLanguages();
+const from = 0, to = 1;
 
 const loadCategory = (index, category, language) => {
-  Server.loadCode(category, language).then((code) => {
-    viewCode(index, language, code);
+  return new RSVP.Promise(resolve => {
+    Server.loadCode(category, language).then((code) => {
+      viewCode(index, language, code);
+      resolve();
+    });
+    if (index == to) {
+      Server.loadDesc(category, language).then(viewDesc);
+    }
   });
-  Server.loadDesc(category, language).then((desc) => {
-    viewDesc(index, desc)
-  })
 };
 
 module.exports = categories => {
@@ -32,8 +37,8 @@ module.exports = categories => {
   $('ul.sub > li').click(function () {
     const $li = $(this);
     const $ul = $(this).parent();
-    loadCategory(0, categories[$ul.data('category')].sub($li.data('subcategory')), languages[0]);
-    loadCategory(1, categories[$ul.data('category')].sub($li.data('subcategory')), languages[1]);
+    loadCategory(from, categories[$ul.data('category')].sub($li.data('subcategory')), languages[0]);
+    loadCategory(to, categories[$ul.data('category')].sub($li.data('subcategory')), languages[1]);
   });
 
   $('#index > li:eq(0)').click();

@@ -1,17 +1,18 @@
 const app = require('../app');
 
-module.exports = (index, language) => {
+module.exports = (index, language, afterRender) => {
   const $panel = $(`.panel:eq(${index})`);
   const $code = $panel.find('.code');
-  var editor = ace.edit($code.attr('id'));
+  let editor = ace.edit($code.attr('id'));
   editor.setTheme('ace/theme/monokai');
+  if (index == 0) $panel.find('.desc').addClass('ace-monokai');
   editor.getSession().setMode(`ace/mode/${language.ace}`);
   editor.renderer.on('afterRender', () => {
     const matchings = app.getMatchings(index);
     if (!matchings || matchings.length == 0) return;
-    var i = 0;
-    var matching = matchings[i].slice(0);
-    var $spans = $code.find('span');
+    let i = 0;
+    let matching = matchings[i].slice(0);
+    const $spans = $code.find('span');
     $spans.each(function () {
       const $span = $(this);
       const span = $span.text();
@@ -26,6 +27,7 @@ module.exports = (index, language) => {
         console.error('something wrong');
       }
     });
+    if (afterRender) afterRender();
   });
   return editor;
 };

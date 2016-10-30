@@ -1,5 +1,5 @@
 module.exports = () => {
-  $('.code').mousemove(function (e) {
+  $('.code, #comparison').mousemove(function (e) {
     $('.match').removeClass('selected');
     const $code = $(this);
     const {pageX, pageY} = e;

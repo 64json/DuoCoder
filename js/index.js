@@ -7,6 +7,7 @@ const {extend} = $;
 
 const categories = Server.getCategories();
 const languages = Server.getLanguages();
+const from = 0, to = 1;
 
 // set global promise error handler
 RSVP.on('error', function (reason) {
@@ -15,10 +16,10 @@ RSVP.on('error', function (reason) {
 
 $(() => {
   extend(true, app, new App());
-  app.setEditor(0, DOM.initEditor(0, languages[0]));
-  app.setEditor(1, DOM.initEditor(1, languages[1]));
+  app.setEditor(from, DOM.initEditor(from, languages[0], DOM.viewComparison));
+  app.setEditor(to, DOM.initEditor(to, languages[1], DOM.viewComparison));
   DOM.initCategories(categories);
   DOM.setupLayout();
-  DOM.setLanguage(0, languages[0]);
-  DOM.setLanguage(1, languages[1]);
+  DOM.setLanguage(from, languages[0]);
+  DOM.setLanguage(to, languages[1]);
 });

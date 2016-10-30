@@ -1,5 +1,4 @@
 const RSVP = require('rsvp');
-
 const {
   ajax,
   extend

@@ -56,6 +56,7 @@
   height: 50%;
   width: 100%;
   .desc {
+    background: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -116,4 +117,19 @@
 
 .match.selected {
   background: rgba(0, 255, 0, .5);
+}
+
+#comparison {
+  .line {
+    margin: 8px;
+  }
+  .group + .group:before {
+    color: $primary-light;
+    content: " → ";
+  }
+  .empty:before {
+    color: $primary-light;
+    font-style: italic;
+    content: "(removed)";
+  }
 }

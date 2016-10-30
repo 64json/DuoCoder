@@ -1,7 +1,7 @@
 const get = require('./ajax/get');
 
 module.exports = (category, language) => {
-  var path = `${language.ext}/desc.md`;
+  let path = `${language.ext}/desc.md`;
   do {
     path = category.dir + '/' + path;
     category = category.parent;

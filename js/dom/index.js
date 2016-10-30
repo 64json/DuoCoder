@@ -4,6 +4,7 @@ const setupLayout = require('./setup_layout');
 const setLanguage = require('./set_language');
 const viewCode = require('./view_code');
 const viewDesc = require('./view_desc');
+const viewComparison = require('./view_comparison');
 
 module.exports = {
   initEditor,
@@ -11,5 +12,6 @@ module.exports = {
   setupLayout,
   setLanguage,
   viewCode,
-  viewDesc
+  viewDesc,
+  viewComparison
 };
