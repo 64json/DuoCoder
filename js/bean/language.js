@@ -4,4 +4,12 @@ module.exports = class {
     this.ace = ace;
     this.ext = ext;
   }
+
+  static getWithExt(ext) {
+    const Server = require('../server');
+    const languages = Server.getLanguages();
+    for (const language of languages) {
+      if (language.ext == ext) return language;
+    }
+  }
 };

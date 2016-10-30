@@ -1,5 +1,5 @@
-const Language = require('./language');
+const language = require('./language');
 
 module.exports = {
-  Language
+  language
 };

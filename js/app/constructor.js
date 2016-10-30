@@ -1,6 +1,7 @@
 const {extend} = $;
 
 const panelVars = {
+  language: null,
   editor: null,
   matchings: null
 };
@@ -11,7 +12,11 @@ module.exports = function () {
     extend(true, {}, panelVars)
   ];
 
-  this.setEditor = (index, editor)=> {
+  this.setLanguage = (index, language) => {
+    this.panel[index].language = language;
+  };
+
+  this.setEditor = (index, editor) => {
     this.panel[index].editor = editor;
   };
 
@@ -19,11 +24,15 @@ module.exports = function () {
     this.panel[index].matchings = matchings;
   };
 
-  this.getEditor = (index)=> {
+  this.getLanguage = (index => {
+    return this.panel[index].language;
+  });
+
+  this.getEditor = (index) => {
     return this.panel[index].editor;
   };
 
-  this.getMatchings = (index)=> {
+  this.getMatchings = (index) => {
     return this.panel[index].matchings;
   }
 };

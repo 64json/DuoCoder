@@ -6,10 +6,12 @@ block css
 block js
     script(type='text/javascript', src='ace/ace.js')
     script(type='text/javascript', src='markdown.min.js')
+    script(type='text/javascript', src='js.cookie.js')
 
 block body
     .sidemenu
-        .bar #DuoCoder
+        .bar
+            a(href='./') #DuoCoder
         ul#index
         .bar.button#next Let me try!
     .panel#lang-from

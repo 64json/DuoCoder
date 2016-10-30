@@ -1,9 +1,9 @@
 const RSVP = require('rsvp');
 const Server = require('../server');
+const app = require('../app');
 const viewCode = require('./view_code');
 const viewDesc = require('./view_desc');
 
-const languages = Server.getLanguages();
 const from = 0, to = 1;
 
 const loadCategory = (index, category, language) => {
@@ -39,8 +39,8 @@ module.exports = categories => {
     $(this).addClass('active');
     const $li = $(this);
     const $ul = $(this).parent();
-    loadCategory(from, categories[$ul.data('category')].sub($li.data('subcategory')), languages[0]);
-    loadCategory(to, categories[$ul.data('category')].sub($li.data('subcategory')), languages[1]);
+    loadCategory(from, categories[$ul.data('category')].sub($li.data('subcategory')), app.getLanguage(from));
+    loadCategory(to, categories[$ul.data('category')].sub($li.data('subcategory')), app.getLanguage(to));
   });
 
   $('#index > li:eq(0)').click();
