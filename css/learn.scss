@@ -55,7 +55,7 @@
   top: 50%;
   height: 50%;
   width: 100%;
-  .desc {
+  .desc, .blur {
     background: none;
     position: absolute;
     top: 0;
@@ -110,6 +110,7 @@
 .button {
   font-size: .75em;
   color: white;
+  cursor: pointer;
 }
 
 #next {
@@ -135,4 +136,9 @@
     font-style: italic;
     content: "(removed)";
   }
+}
+
+.blur {
+  display: none;
+  backdrop-filter: blur(4px);
 }

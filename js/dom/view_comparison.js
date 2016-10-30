@@ -3,6 +3,8 @@ const app = require('../app');
 const from = 0, to = 1;
 
 module.exports = () => {
+  if (!app.isComparisonEnabled()) return;
+
   const $desc = $('#comparison');
   const pair = [
     app.getMatchings(from),

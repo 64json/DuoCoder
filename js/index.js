@@ -38,6 +38,7 @@ extend(true, window, {
     app.setEditor(to, DOM.initEditor(to, lang_to, DOM.viewComparison));
     DOM.initCategories(categories);
     DOM.setupLayout();
+    DOM.setupMatching();
     DOM.setLanguage(from, lang_from);
     DOM.setLanguage(to, lang_to);
   }
