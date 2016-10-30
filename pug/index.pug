@@ -4,7 +4,7 @@ block css
     link(rel='stylesheet', href='main.css')
 
 block body
-    .fullscreen
+    .fullscreen#top
         h1 #DuoCoder
         .title-divider _
         h3 1| Which one are you familiar with?
@@ -21,7 +21,9 @@ block body
                 | .</br>
                 | .
             h3 2| Which one do you want to learn?
-    .lang-container.focused.unfocused#lang-to
+    form.lang-container.focused.unfocused#lang-to(action='./learn.html', method='get')
+        input(type='hidden', name='lang_from')
+        input(type='hidden', name='lang_to')
     .footer
         h5: a(href='http://jasonpark.me/') jasonpark.me
     script.

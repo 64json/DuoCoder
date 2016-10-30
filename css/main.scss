@@ -30,7 +30,7 @@
     width: 168px;
     transition: color .5s;
   }
-  &:hover {
+  &:hover, &.selected {
     .logo.mono {
       opacity: 0;
     }
