@@ -8,7 +8,6 @@ const {Language} = require('./bean');
 const {extend} = $;
 
 const categories = Server.getCategories();
-const languages = Server.getLanguages();
 const from = 0, to = 1;
 
 // set global promise error handler
@@ -23,8 +22,10 @@ extend(true, window, {
     let lang_from_ext = getUrlParameter('lang_from');
     let lang_to_ext = getUrlParameter('lang_to');
     if (lang_from_ext && lang_to_ext) {
-      Storage.language.set(from, lang_from_ext);
-      Storage.language.set(to, lang_to_ext);
+      const changed =
+        Storage.language.set(from, lang_from_ext) ||
+        Storage.language.set(to, lang_to_ext);
+      if (changed) Storage.category.set(categories[0].sub(0));
     } else {
       lang_from_ext = Storage.language.get(from);
       lang_to_ext = Storage.language.get(to);

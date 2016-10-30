@@ -4,6 +4,7 @@ module.exports = class {
     this.name = name;
     this.dir = dir;
     this.children = children;
+    this.element = null;
     children.forEach(child => {
       child.parent = this;
     });

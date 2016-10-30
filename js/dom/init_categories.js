@@ -1,5 +1,6 @@
 const RSVP = require('rsvp');
 const Server = require('../server');
+const Storage = require('../storage');
 const app = require('../app');
 const viewCode = require('./view_code');
 const viewDesc = require('./view_desc');
@@ -21,11 +22,13 @@ const loadCategory = (index, category, language) => {
 module.exports = categories => {
   const $index = $('#index');
   categories.forEach((category, i) => {
-    $index.append(`<li>${i + 1}| ${category.name}</li>`);
+    category.element = $(`<li>${i + 1}| ${category.name}</li>`);
+    $index.append(category.element);
     const $sub_index = $(`<ul class="sub" data-category="${i}"></ul>`);
     $index.append($sub_index);
     category.children.forEach((category, j) => {
-      $sub_index.append(`<li data-subcategory="${j}">${category.name}</li>`);
+      category.element = $(`<li data-subcategory="${j}">${category.name}</li>`);
+      $sub_index.append(category.element);
     });
   });
 
@@ -39,10 +42,15 @@ module.exports = categories => {
     $(this).addClass('active');
     const $li = $(this);
     const $ul = $(this).parent();
-    loadCategory(from, categories[$ul.data('category')].sub($li.data('subcategory')), app.getLanguage(from));
-    loadCategory(to, categories[$ul.data('category')].sub($li.data('subcategory')), app.getLanguage(to));
+    const category = categories[$ul.data('category')].sub($li.data('subcategory'));
+    Storage.category.set(category);
+    loadCategory(from, category, app.getLanguage(from));
+    loadCategory(to, category, app.getLanguage(to));
   });
 
-  $('#index > li:eq(0)').click();
-  $('ul.sub > li:eq(0)').click();
+  let category = Storage.category.get();
+  do {
+    category.element.click();
+    category = category.parent;
+  } while (category);
 };
