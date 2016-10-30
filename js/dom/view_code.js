@@ -1,6 +1,6 @@
 const app = require('../app');
 
-module.exports = (index, language, code) => {
+module.exports = (index, code) => {
   const matchings = [];
   app.setMatchings(index, matchings);
   code = code.replace(/#(\d+){\[([^(\]})]*)\]}/g, (match, num, content) => {

@@ -1,7 +1,12 @@
+const app = require('../app');
 const exam = require('./exam');
 
 module.exports = () => {
   $('#next').click(() => {
-    exam.enter();
+    if (app.isExamMode()) {
+      exam.exit();
+    } else {
+      exam.enter();
+    }
   });
 };

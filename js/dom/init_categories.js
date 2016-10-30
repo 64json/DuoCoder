@@ -9,17 +9,14 @@ const exam = require('./exam');
 const from = 0, to = 1;
 
 const loadCategory = (index, category, language) => {
-  return new RSVP.Promise(resolve => {
-    Server.loadCode(category, language).then((code) => {
-      exam.exit();
-      app.setCode(index, code);
-      viewCode(index, language, code);
-      resolve();
-    });
-    if (index == to) {
-      Server.loadDesc(category, language).then(viewDesc);
-    }
+  Server.loadCode(category, language).then((code) => {
+    exam.exit();
+    app.setCode(index, code);
+    viewCode(index, code);
   });
+  if (index == to) {
+    Server.loadDesc(category, language).then(viewDesc);
+  }
 };
 
 module.exports = categories => {

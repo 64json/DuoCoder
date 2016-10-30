@@ -117,6 +117,12 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  &:before {
+    content: 'Let me try!';
+  }
+  &.selected:before {
+    content: 'Back to the answer';
+  }
 }
 
 .match.selected {

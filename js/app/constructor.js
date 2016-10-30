@@ -13,6 +13,7 @@ module.exports = function () {
     extend(true, {}, panelVars)
   ];
   this.comparison_enabled = true;
+  this.exam_mode = false;
 
   this.setLanguage = (index, language) => {
     this.panel[index].language = language;
@@ -38,6 +39,14 @@ module.exports = function () {
     this.comparison_enabled = false;
   };
 
+  this.enterExamMode = () => {
+    this.exam_mode = true;
+  };
+
+  this.exitExamMode = () => {
+    this.exam_mode = false;
+  };
+
   this.getLanguage = (index => {
     return this.panel[index].language;
   });
@@ -56,5 +65,9 @@ module.exports = function () {
 
   this.isComparisonEnabled = () => {
     return this.comparison_enabled;
+  };
+
+  this.isExamMode = () => {
+    return this.exam_mode;
   };
 };
