@@ -18,9 +18,9 @@ module.exports = () => {
     const progress = calculateProgress(app.getCode(to, true), editor.getValue());
     $('.progress').css('width', `${progress * 100}%`);
     if (progress == 1) {
+      exam.exit(true);
       $('#next').addClass('next');
       $('.progress').css('width', '');
-      exam.exit(true);
     }
   });
 };

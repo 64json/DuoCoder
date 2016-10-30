@@ -29,16 +29,19 @@
   background: $primary-normal;
   color: $primary-light;
   font-weight: bold;
+  .title {
+    position: absolute;
+    width: 100%;
+  }
 }
 
-.title {
-  position: absolute;
-  width: 100%;
+.logo, .title {
+  color: $primary-lighter;
 }
 
 .progress {
   position: absolute;
-  background: rgba(0, 255, 0, .1);
+  background: rgba(0, 255, 0, .2);
   top: 0;
   height: 64px;
   width: 0;

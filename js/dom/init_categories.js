@@ -1,4 +1,3 @@
-const RSVP = require('rsvp');
 const Server = require('../server');
 const Storage = require('../storage');
 const app = require('../app');
@@ -46,6 +45,7 @@ module.exports = categories => {
     Storage.category.set(category);
     loadCategory(from, category, app.getLanguage(from));
     loadCategory(to, category, app.getLanguage(to));
+    exam.exit();
   });
 
   let category = Storage.category.get();

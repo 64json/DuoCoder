@@ -3,7 +3,8 @@ const exam = require('./exam');
 
 module.exports = () => {
   $('#next').click(function () {
-    if ($(this).hasClass('next')) {
+    const $next = $(this);
+    if ($next.hasClass('next')) {
       const $active = $('.sub > li.active');
       if ($active.is(':last-child')) {
         const $active_parent = $('#index > li.active');
@@ -16,6 +17,7 @@ module.exports = () => {
       } else {
         $active.next().click();
       }
+      $next.removeClass('next');
     } else {
       if (app.isExamMode()) {
         exam.exit();

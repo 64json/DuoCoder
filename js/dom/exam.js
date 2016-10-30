@@ -14,7 +14,7 @@ module.exports = {
   },
   exit: (keep_code) => {
     app.exitExamMode();
-    $('#next').removeClass('selected');
+    $('#next').removeClass('selected next');
     $('.desc-container .blur').css('display', '');
     const editor = app.getEditor(to);
     editor.setReadOnly(true);
