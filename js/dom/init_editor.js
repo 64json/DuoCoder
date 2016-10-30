@@ -18,13 +18,16 @@ module.exports = (index, language, afterRender) => {
     let matching = matchings[i].slice(0);
     const $spans = $code.find('span');
     $spans.each(function () {
+      while (!matching[0].length) {
+        matching = matchings[++i].slice(0);
+      }
       const $span = $(this);
       const span = $span.text();
       if (span.indexOf(matching[0]) == 0) {
         matching[0] = matching[0].substring(span.length).trim();
         $span.addClass('match');
         $span.data('match', matching[1]);
-        if (matching[0].length == 0) {
+        if (!matching[0].length) {
           matching = matchings[++i].slice(0);
         }
       } else {
