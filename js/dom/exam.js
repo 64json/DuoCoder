@@ -8,15 +8,16 @@ module.exports = {
     app.enterExamMode();
     $('#next').addClass('selected');
     $('.desc-container .blur').css('display', 'block');
-    app.disableComparison();
     const editor = app.getEditor(to);
+    editor.setReadOnly(false);
     editor.setValue('');
   },
-  exit: () => {
+  exit: (keep_code) => {
     app.exitExamMode();
     $('#next').removeClass('selected');
     $('.desc-container .blur').css('display', '');
-    app.enableComparison();
-    viewCode(to, app.getCode(to));
+    const editor = app.getEditor(to);
+    editor.setReadOnly(true);
+    if (!keep_code) viewCode(to, app.getCode(to));
   }
 };

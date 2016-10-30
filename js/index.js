@@ -39,6 +39,7 @@ extend(true, window, {
     DOM.initCategories(categories);
     DOM.setupLayout();
     DOM.setupMatching();
+    DOM.setupExam();
     DOM.setLanguage(from, lang_from);
     DOM.setLanguage(to, lang_to);
   }

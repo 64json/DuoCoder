@@ -31,6 +31,20 @@
   font-weight: bold;
 }
 
+.title {
+  position: absolute;
+  width: 100%;
+}
+
+.progress {
+  position: absolute;
+  background: rgba(0, 255, 0, .1);
+  top: 0;
+  height: 64px;
+  width: 0;
+  transition: width .5s;
+}
+
 .panel .bar {
   font-size: .8em;
 }
@@ -117,11 +131,19 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  background: rgba(0, 255, 0, .2);
+  transition: background .5s;
   &:before {
     content: 'Let me try!';
   }
-  &.selected:before {
-    content: 'Back to the answer';
+  &.selected {
+    background: rgba(255, 0, 0, .2);
+    &:before {
+      content: 'Back to the answer';
+    }
+  }
+  &.next:before {
+    content: 'Next';
   }
 }
 
@@ -132,6 +154,14 @@
 #comparison {
   .line {
     margin: 8px;
+  }
+  .line-number {
+    color: $primary-lighter;
+    margin-top: 36px;
+    text-decoration: underline;
+  }
+  .line-number:first-child {
+    margin-top: 8px;
   }
   .group + .group:before {
     color: $primary-light;

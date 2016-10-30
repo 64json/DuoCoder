@@ -7,7 +7,11 @@ module.exports = (index, language, afterRender) => {
   editor.setTheme('ace/theme/monokai');
   if (index == 0) $panel.find('.desc').addClass('ace-monokai');
   editor.getSession().setMode(`ace/mode/${language.ace}`);
+  editor.setReadOnly(true);
+
   editor.renderer.on('afterRender', () => {
+    if (app.isExamMode()) return;
+
     const matchings = app.getMatchings(index);
     if (!matchings || matchings.length == 0) return;
     let i = 0;

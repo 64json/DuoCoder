@@ -3,8 +3,6 @@ const app = require('../app');
 const from = 0, to = 1;
 
 module.exports = () => {
-  if (!app.isComparisonEnabled()) return;
-
   const $desc = $('#comparison');
   const pair = [
     app.getMatchings(from),
@@ -20,23 +18,31 @@ module.exports = () => {
 
   const comparisons = [];
   for (let i = 0; i <= max; i++) {
-    comparisons.push([[], []]);
+    comparisons.push([[], [], -1]);
   }
   for (const i of [from, to]) {
     $(`.panel:eq(${i}) .code .match`).each(function () {
       const $match = $(this);
       const match = $match.data('match');
       comparisons[match][i].push($match);
+      if (i == 0 && comparisons[match][2] == -1) {
+        comparisons[match][2] = $match.parent().index() + 1;
+      }
     });
   }
-
   $desc.empty();
+  let last_line = -1;
   for (const comparison of comparisons) {
     const [pieces_from, pieces_to] = comparison;
     const is_same = pieces_from.length == pieces_to.length && pieces_from.every(function (element, index) {
         return element.text() == pieces_to[index].text();
       });
     if (is_same) continue;
+    const line = comparison[2];
+    if (last_line != line) {
+      last_line = line;
+      $desc.append(`<div class="line line-number">Line ${line}</div>`);
+    }
     const $line = $('<div class="line"></div>');
     $desc.append($line);
     for (const pieces of [pieces_from, pieces_to]) {

@@ -3,6 +3,7 @@ const initEditor = require('./init_editor');
 const initCategories = require('./init_categories');
 const setupLayout = require('./setup_layout');
 const setupMatching = require('./setup_matching');
+const setupExam = require('./setup_exam');
 const setLanguage = require('./set_language');
 const viewCode = require('./view_code');
 const viewDesc = require('./view_desc');
@@ -15,6 +16,7 @@ module.exports = {
   initCategories,
   setupLayout,
   setupMatching,
+  setupExam,
   setLanguage,
   viewCode,
   viewDesc,

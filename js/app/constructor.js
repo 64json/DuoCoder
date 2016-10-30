@@ -12,7 +12,6 @@ module.exports = function () {
     extend(true, {}, panelVars),
     extend(true, {}, panelVars)
   ];
-  this.comparison_enabled = true;
   this.exam_mode = false;
 
   this.setLanguage = (index, language) => {
@@ -29,14 +28,6 @@ module.exports = function () {
 
   this.setCode = (index, code) => {
     this.panel[index].code = code;
-  };
-
-  this.enableComparison = () => {
-    this.comparison_enabled = true;
-  };
-
-  this.disableComparison = () => {
-    this.comparison_enabled = false;
   };
 
   this.enterExamMode = () => {
@@ -59,12 +50,10 @@ module.exports = function () {
     return this.panel[index].matchings;
   };
 
-  this.getCode = (index) => {
-    return this.panel[index].code;
-  };
-
-  this.isComparisonEnabled = () => {
-    return this.comparison_enabled;
+  this.getCode = (index, readable) => {
+    const code = this.panel[index].code;
+    if (readable) return code.replace(/#(\d+){\[([^(\]})]*)\]}/g, '$2');
+    else return code;
   };
 
   this.isExamMode = () => {
