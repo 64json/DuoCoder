@@ -97,6 +97,9 @@
   & > li {
     cursor: pointer;
     margin-top: 8px;
+    &.active {
+      color: $primary-lighter;
+    }
   }
 }
 

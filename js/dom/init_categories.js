@@ -35,6 +35,8 @@ module.exports = categories => {
   });
 
   $('ul.sub > li').click(function () {
+    $('ul.sub > li.active').removeClass('active');
+    $(this).addClass('active');
     const $li = $(this);
     const $ul = $(this).parent();
     loadCategory(from, categories[$ul.data('category')].sub($li.data('subcategory')), languages[0]);

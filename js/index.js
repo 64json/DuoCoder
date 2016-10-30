@@ -14,12 +14,15 @@ RSVP.on('error', function (reason) {
   console.assert(false, reason);
 });
 
-$(() => {
-  extend(true, app, new App());
-  app.setEditor(from, DOM.initEditor(from, languages[0], DOM.viewComparison));
-  app.setEditor(to, DOM.initEditor(to, languages[1], DOM.viewComparison));
-  DOM.initCategories(categories);
-  DOM.setupLayout();
-  DOM.setLanguage(from, languages[0]);
-  DOM.setLanguage(to, languages[1]);
+extend(true, window, {
+  main: DOM.setupMain,
+  learn: () => {
+    extend(true, app, new App());
+    app.setEditor(from, DOM.initEditor(from, languages[0], DOM.viewComparison));
+    app.setEditor(to, DOM.initEditor(to, languages[1], DOM.viewComparison));
+    DOM.initCategories(categories);
+    DOM.setupLayout();
+    DOM.setLanguage(from, languages[0]);
+    DOM.setLanguage(to, languages[1]);
+  }
 });
