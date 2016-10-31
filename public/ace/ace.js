@@ -14366,7 +14366,7 @@ var Text = function(parentEl) {
             stringBuilder.push("<span class='", classes, "'", style, ">", output, "</span>");
         }
         else {
-            stringBuilder.push(output);
+            stringBuilder.push("<span>", output, "</span>");
         }
         return screenColumn + value.length;
     };
