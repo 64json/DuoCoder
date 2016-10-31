@@ -7,6 +7,10 @@ module.exports = () => {
 };
 
 const categories = [
+  new Category('Comments', 'comment', [
+    new Category('Single Line Comments', 'single'),
+    new Category('Multiple Lines Comments', 'multi')
+  ]),
   new Category('Variables', 'var', [
     new Category('Definition', 'def'),
     new Category('Boolean Type', 'bool'),

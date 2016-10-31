@@ -1,14 +1,11 @@
 const app = require('../app');
 const exam = require('./exam');
+const util = require('../util');
 
 const from = 0, to = 1;
 
-const zip = (code) => {
-  return code.trim().replace(/^\s*[\r\n]/gm, '').replace(/\b\s+\B/g, '').replace(/\B\s+\b/g, '').replace(/\B\s+\B/g, '');
-};
-
 const calculateProgress = (code_answer, code_user) => {
-  return similarity(zip(code_answer), zip(code_user));
+  return similarity(util.zip(code_answer), util.zip(code_user));
 };
 
 module.exports = () => {

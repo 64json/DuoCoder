@@ -26,7 +26,7 @@ module.exports = () => {
       const match = $match.data('match');
       comparisons[match][i].push($match);
       if (i == 0 && comparisons[match][2] == -1) {
-        comparisons[match][2] = $match.parent().index();
+        comparisons[match][2] = $match.parent().parent().index();
       }
     });
   }
@@ -43,6 +43,8 @@ module.exports = () => {
     }
   }
   $desc.empty();
+  $desc.append('<h2>Key Changes</h2>');
+  $desc.append('<h6>Not all changes are shown.</h6>');
   let last_line = -1;
   for (const comparison of comparisons) {
     const [pieces_from, pieces_to] = comparison;

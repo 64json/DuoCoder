@@ -82,7 +82,9 @@
     overflow: scroll;
     font-size: .6em;
     text-align: left;
-    padding: 24px;
+  }
+  .desc {
+    padding: 0 24px;
   }
 }
 
@@ -155,17 +157,24 @@
 }
 
 #comparison {
-  .line {
-    margin: 8px;
+  padding-bottom: 24px;
+  h2 {
+    color: $primary-light;
+    margin-bottom: 0;
+  }
+  h6 {
+    color: $primary-light;
+    margin-top: 4px;
+    margin-bottom: 24px;
+    font-weight: normal;
   }
   .line-number {
     color: $primary-lighter;
-    margin-top: 36px;
+    margin-top: 16px;
+    margin-bottom: 4px;
     text-decoration: underline;
   }
-  .line-number:first-child {
-    margin-top: 8px;
-  }
+
   .group + .group:before {
     color: $primary-light;
     content: " → ";
@@ -175,9 +184,21 @@
     font-style: italic;
     content: "(nothing)";
   }
+  .match + .match {
+    margin-left: .5em;
+  }
 }
 
 .blur {
   display: none;
   backdrop-filter: blur(4px);
+}
+
+code {
+  font-size: .8em;
+  font-family: monospace;
+  background: $primary-dark;
+  padding: 4px 8px;
+  display: inline-block;
+  margin: 2px 0;
 }

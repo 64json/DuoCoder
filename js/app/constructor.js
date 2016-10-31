@@ -52,7 +52,7 @@ module.exports = function () {
 
   this.getCode = (index, readable) => {
     const code = this.panel[index].code;
-    if (readable) return code.replace(/#(\d+){\[([^(\]})]*)\]}/g, '$2');
+    if (readable) return code.replace(/#(\d+)\{\[(((?!\]\}).)*)\]\}/g, '$2');
     else return code;
   };
 
