@@ -24,7 +24,9 @@ module.exports = () => {
     const editor = editors[i];
     const lines = app.getLines(i);
     for (var line = 0; line <= lines; line++) {
+      html.push('<div>');
       editor.renderer.$textLayer.$renderLine(html, line, true, false);
+      html.push('</div>');
     }
     $temp_snippets[i].html(html.join(''));
   }
@@ -39,7 +41,7 @@ module.exports = () => {
       const match = $match.data('match');
       comparisons[match][i].push($match);
       if (i == 0 && comparisons[match][2] == -1) {
-        comparisons[match][2] = $match.parent().parent().index();
+        comparisons[match][2] = $match.parent().index();
       }
     });
   }
