@@ -14409,8 +14409,6 @@ var Text = function(parentEl) {
         if (!matching[0].length) {
           matching = matchings[++j].slice(0);
         }
-      } else {
-        console.error('something wrong');
       }
       return {
         j: j,

@@ -11,6 +11,7 @@ module.exports = () => {
 
   let max = -1;
   for (const matchings of pair) {
+    if (matchings == null) return;
     for (const matching of matchings) {
       max = Math.max(max, matching[1]);
     }
