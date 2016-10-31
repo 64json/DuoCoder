@@ -19,6 +19,7 @@ extend(true, window, {
   main: DOM.setupMain,
   learn: () => {
     extend(true, app, new App());
+    extend(true, window, {app});
     let lang_from_ext = getUrlParameter('lang_from');
     let lang_to_ext = getUrlParameter('lang_to');
     if (lang_from_ext && lang_to_ext) {

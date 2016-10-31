@@ -15,6 +15,5 @@ module.exports = (index, code) => {
     });
   }
   code = lines.join('\n');
-  matchings.push(['', -1]);
   app.getEditor(index).setValue(code, -1);
 };
