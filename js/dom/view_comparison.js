@@ -17,12 +17,24 @@ module.exports = () => {
     }
   }
 
+  const editors = [app.getEditor(from), app.getEditor(to)];
+  const $temp_snippets = [$('.temp-snippet:eq(0)'),$('.temp-snippet:eq(1)')];
+  for (const i of [from, to]) {
+    const html = [];
+    const editor = editors[i];
+    const lines = app.getLines(i);
+    for (var line = 0; line <= lines; line++) {
+      editor.renderer.$textLayer.$renderLine(html, line, true, false);
+    }
+    $temp_snippets[i].html(html.join(''));
+  }
+
   const comparisons = [];
   for (let i = 0; i <= max; i++) {
     comparisons.push([[], [], -1]);
   }
   for (const i of [from, to]) {
-    $(`.panel:eq(${i}) .code .match`).each(function () {
+    $temp_snippets[i].find('.match').each(function () {
       const $match = $(this);
       const match = $match.data('match');
       comparisons[match][i].push($match);

@@ -4,6 +4,7 @@ module.exports = (index, code) => {
   const matchings = [];
   app.setMatchings(index, matchings);
   const lines = code.split(/\r?\n/);
+  app.setLines(index, lines.length);
   const omit_num = 99999;
   for (let i = 0; i < lines.length; i++) {
     lines[i] = lines[i].replace(/(^|\]\})(((?!#\d+\{\[).)+)/gm, `$1#${omit_num}{[$2]}`);

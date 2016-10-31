@@ -4,7 +4,8 @@ const panelVars = {
   language: null,
   editor: null,
   matchings: null,
-  code: ''
+  code: '',
+  lines: -1
 };
 
 module.exports = function () {
@@ -28,6 +29,10 @@ module.exports = function () {
 
   this.setCode = (index, code) => {
     this.panel[index].code = code;
+  };
+
+  this.setLines = (index, lines) => {
+    this.panel[index].lines = lines;
   };
 
   this.enterExamMode = () => {
@@ -55,6 +60,10 @@ module.exports = function () {
     if (readable) return code.replace(/#(\d+)\{\[(((?!\]\}).)*)\]\}/g, '$2');
     else return code;
   };
+
+  this.getLines = (index) => {
+    return this.panel[index].lines;
+  }
 
   this.isExamMode = () => {
     return this.exam_mode;

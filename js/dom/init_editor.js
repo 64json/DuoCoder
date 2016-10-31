@@ -1,4 +1,5 @@
 const app = require('../app');
+const viewComparison = require('./view_comparison');
 
 module.exports = (index, language, afterRender) => {
   const $panel = $(`.panel:eq(${index})`);
@@ -10,11 +11,9 @@ module.exports = (index, language, afterRender) => {
   editor.getSession().setUseWrapMode(true);
   editor.setShowFoldWidgets(false);
   editor.setReadOnly(true);
-
-  editor.renderer.on('afterRender', () => {
+  editor.renderer.on('timeToUpdateComparison', () => {
     if (app.isExamMode()) return;
-
-    if (afterRender) afterRender();
+    viewComparison();
   });
   return editor;
 };

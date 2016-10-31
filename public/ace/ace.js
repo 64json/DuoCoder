@@ -16139,6 +16139,7 @@ var VirtualRenderer = function(container, theme) {
             this.$moveTextAreaToCursor();
             this.$highlightGutterLine && this.$updateGutterLineHighlight();
             this._signal("afterRender");
+            this._signal("timeToUpdateComparison");
             return;
         }
         if (changes & this.CHANGE_SCROLL) {
@@ -16187,6 +16188,7 @@ var VirtualRenderer = function(container, theme) {
         }
 
         this._signal("afterRender");
+        this._signal("timeToUpdateComparison");
     };
 
 

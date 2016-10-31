@@ -35,8 +35,8 @@ extend(true, window, {
     const lang_to = Language.getWithExt(lang_to_ext);
     app.setLanguage(from, lang_from);
     app.setLanguage(to, lang_to);
-    app.setEditor(from, DOM.initEditor(from, lang_from, DOM.viewComparison));
-    app.setEditor(to, DOM.initEditor(to, lang_to, DOM.viewComparison));
+    app.setEditor(from, DOM.initEditor(from, lang_from));
+    app.setEditor(to, DOM.initEditor(to, lang_to));
     DOM.initCategories(categories);
     DOM.setupLayout();
     DOM.setupMatching();
