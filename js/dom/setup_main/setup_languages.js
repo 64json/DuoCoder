@@ -30,9 +30,13 @@ module.exports = () => {
     if ($lang_from_selected.length && $lang_to_selected.length) {
       const from_index = $lang_from_selected.index();
       const to_index = $lang_to_selected.index();
-      $form.find('[name="lang_from"]').val(languages[from_index].ext);
-      $form.find('[name="lang_to"]').val(languages[to_index].ext);
-      $form.submit();
+      if(from_index === to_index) {
+        alert('Please select two different languages.');
+      } else {
+        $form.find('[name="lang_from"]').val(languages[from_index].ext);
+        $form.find('[name="lang_to"]').val(languages[to_index].ext);
+        $form.submit();
+      }
     }
   });
 };
