@@ -1,4 +1,4 @@
-#0{[const]} #1{[int]} integer = #2{[3]};
-#3{[const]} #4{[float]} decimal = #5{[0.8f]};
-#6{[const]} #7{[double]} pi = #8{[3.1415926535]};
-#9{[const]} #10{[long long int]} long_number = #11{[4294967296L]};
+#0{[const]} #1{[int]} #2{[integer]} = #3{[3]};
+#4{[const]} #5{[float]} #6{[decimal]} = #7{[0.8f]};
+#8{[const]} #9{[double]} #10{[pi]} = #11{[3.1415926535]};
+#12{[const]} #13{[long long int]} #14{[long_number]} = #15{[4294967296L]};
