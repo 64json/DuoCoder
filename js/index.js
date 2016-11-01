@@ -23,10 +23,9 @@ extend(true, window, {
     let lang_from_ext = getUrlParameter('lang_from');
     let lang_to_ext = getUrlParameter('lang_to');
     if (lang_from_ext && lang_to_ext) {
-      const changed =
-        Storage.language.set(from, lang_from_ext) ||
-        Storage.language.set(to, lang_to_ext);
-      if (changed) Storage.category.set(categories[0].sub(0));
+      const changed_from = Storage.language.set(from, lang_from_ext);
+      const changed_to = Storage.language.set(to, lang_to_ext);
+      if (changed_from || changed_to) Storage.category.set(categories[0].sub(0));
     } else {
       lang_from_ext = Storage.language.get(from);
       lang_to_ext = Storage.language.get(to);
