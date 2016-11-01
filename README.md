@@ -3,7 +3,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/parkjs814/DuoCoder/master/branding/screenshot.png)
 
-**DuoCoder** is inspired by **Duolingo**, a free language-learning platform.
+**DuoCoder** is inspired by **[Duolingo](https://www.duolingo.com)**, a free language-learning platform.
 
 It is mostly for those of you who are familiar with one programming language and want to **learn another from it**.
 
