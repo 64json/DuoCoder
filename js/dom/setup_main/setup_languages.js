@@ -14,20 +14,25 @@ module.exports = () => {
       $lang.append(`<div class="name">${language.name}</div>`);
     }
     $container.find('.lang').click(function () {
+      const language = languages[$(this).index()];
+      if (!language.complete) {
+        alert(`DuoCoder is under development for ${language.name}.`);
+        return;
+      }
       $container.find('.lang.selected').removeClass('selected');
       $(this).addClass('selected');
     });
   }
   $('.lang').click(() => {
-    const $lang_to = $('#lang-to');
+    const $form = $('form');
     const $lang_from_selected = $('#lang-from .lang.selected');
     const $lang_to_selected = $('#lang-to .lang.selected');
     if ($lang_from_selected.length && $lang_to_selected.length) {
       const from_index = $lang_from_selected.index();
-      const to_index = $lang_to_selected.index() - 2;
-      $lang_to.find('[name="lang_from"]').val(languages[from_index].ext);
-      $lang_to.find('[name="lang_to"]').val(languages[to_index].ext);
-      $lang_to.submit();
+      const to_index = $lang_to_selected.index();
+      $form.find('[name="lang_from"]').val(languages[from_index].ext);
+      $form.find('[name="lang_to"]').val(languages[to_index].ext);
+      $form.submit();
     }
   });
 };

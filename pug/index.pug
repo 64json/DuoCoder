@@ -21,10 +21,11 @@ block body
                 | .</br>
                 | .
             h3 2| Which one do you want to learn?
-    form.lang-container.focused.unfocused#lang-to(action='./learn.html', method='get')
-        input(type='hidden', name='lang_from')
-        input(type='hidden', name='lang_to')
+    lang-container.focused.unfocused#lang-to
     .footer
         h5: a(href='http://jasonpark.me/') jasonpark.me
+    form(action='./learn.html', method='get')
+        input(type='hidden', name='lang_from')
+        input(type='hidden', name='lang_to')
     script.
         main();

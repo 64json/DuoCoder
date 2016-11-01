@@ -9,7 +9,7 @@ module.exports = () => {
 const languages = [
   new Language('C++', 'c_cpp', 'cpp'),
   new Language('Python', 'python', 'py'),
-  new Language('Java', 'java', 'java'),
-  new Language('EMCAScript', 'javascript', 'js'),
-  new Language('Nada.', null, 'idk')
+  new Language('Java', 'java', 'java', false),
+  new Language('EMCAScript', 'javascript', 'js', false),
+  new Language('Nada.', null, 'idk', false)
 ];

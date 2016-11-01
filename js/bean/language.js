@@ -1,8 +1,9 @@
 module.exports = class {
-  constructor(name, ace, ext) {
+  constructor(name, ace, ext, complete = true) {
     this.name = name;
     this.ace = ace;
     this.ext = ext;
+    this.complete = complete;
   }
 
   static getWithExt(ext) {
