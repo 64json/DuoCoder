@@ -1,6 +1,6 @@
 ## Multiple Lines Comments
 
-1. It neither begin nor end with any other statement on the same line.
+1. It neither begins nor ends with any other statement on the same line.
 
 ### What it looks like?
 ```
