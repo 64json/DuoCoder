@@ -9,6 +9,6 @@
 3. Else statement
     ```else { statement }```
     
-4. _If_ statement should precede before _Else If_ and _Else_ statement.
+4. `if` statement should precede before `else if` and `else` statement.
 
-5. _Else If_ statement cannot come after _Else_ statement.
+5. `else if` statement cannot come after `else` statement.

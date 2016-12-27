@@ -18,10 +18,10 @@
         statement
     ```
     
-4. _If_ statement should precede before _Else If_ and _Else_ statement.
+4. `if` statement should precede before `elif` and `else` statement.
 
-5. _Else If_ statement cannot come after _Else_ statement.
+5. `elif` statement cannot come after `else` statement.
 
-6. _Pass_ statement does nothing but acts as a placeholder.
+6. `pass` statement does nothing but acts as a placeholder.
 
 7. Indentation in python declares blocks of code. 
