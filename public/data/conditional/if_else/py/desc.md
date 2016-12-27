@@ -23,3 +23,5 @@
 5. _Else If_ statement cannot come after _Else_ statement.
 
 6. _Pass_ statement does nothing but acts as a placeholder.
+
+7. Indentation in python declares blocks of code. 
