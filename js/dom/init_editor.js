@@ -9,6 +9,7 @@ module.exports = (index, language, afterRender) => {
   if (index == 0) $panel.find('.desc').addClass('ace-monokai');
   editor.getSession().setMode(`ace/mode/${language.ace}`);
   editor.getSession().setUseWrapMode(true);
+  editor.setDisplayIndentGuides(false);
   editor.setShowFoldWidgets(false);
   editor.setReadOnly(true);
   editor.renderer.on('timeToUpdateComparison', () => {
