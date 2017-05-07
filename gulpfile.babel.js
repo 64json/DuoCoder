@@ -1,20 +1,20 @@
 'use strict';
 
-import path from "path";
-import gulp from "gulp";
-import uglify from "gulp-uglify";
-import autoprefixer from "gulp-autoprefixer";
-import header from "gulp-header";
-import gutil from "gulp-util";
-import sourcemaps from "gulp-sourcemaps";
-import connect from "gulp-connect";
-import browserify from "browserify";
-import babelify from "babelify";
-import source from "vinyl-source-stream";
-import buffer from "vinyl-buffer";
-import pug from "gulp-pug";
-import sass from "gulp-sass";
-import pkg from "./package.json";
+import path from 'path';
+import gulp from 'gulp';
+import uglify from 'gulp-uglify';
+import autoprefixer from 'gulp-autoprefixer';
+import header from 'gulp-header';
+import gutil from 'gulp-util';
+import sourcemaps from 'gulp-sourcemaps';
+import connect from 'gulp-connect';
+import browserify from 'browserify';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import pug from 'gulp-pug';
+import sass from 'gulp-sass';
+import pkg from './package.json';
 
 const appName = 'duocoder';
 
@@ -52,8 +52,8 @@ gulp.task('build-css', () => {
 
   return gulp.src(cssDir)
     .pipe(autoprefixer('last 2 version', 'ie 8', 'ie 9'))
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(header(banner, {pkg}))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(header(banner, { pkg }))
     .pipe(gulp.dest(outputPaths.css))
     .pipe(connect.reload());
 });
@@ -72,7 +72,7 @@ gulp.task('build-js', () => {
     .bundle()
     .on('error', onError)
     .pipe(source(`${appName}.js`))
-    .pipe(header(banner, {pkg}))
+    .pipe(header(banner, { pkg }))
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(uglify())
@@ -86,10 +86,14 @@ gulp.task('build-js', () => {
 gulp.task('build-pug', () => {
   gutil.log('\n\nBuild pug Paths: \n', pugDir, '\n\n');
 
-  var PUG_LOCALS = {title: pkg.name};
+  var PUG_LOCALS = {
+    title: pkg.name,
+    description: pkg.description,
+    author: pkg.author
+  };
 
   return gulp.src(pugDir)
-    .pipe(pug({locals: PUG_LOCALS}).on('error', onError))
+    .pipe(pug({ locals: PUG_LOCALS }).on('error', onError))
     .pipe(gulp.dest(outputPaths.pug))
     .pipe(connect.reload());
 });
