@@ -11,5 +11,6 @@ const languages = [
   new Language('Python', 'python', 'py'),
   new Language('Java', 'java', 'java', false),
   new Language('ECMAScript', 'javascript', 'js', false),
+  new Language('Go', 'golang', 'go'),
   new Language('Nada.', null, 'idk', false)
 ];
