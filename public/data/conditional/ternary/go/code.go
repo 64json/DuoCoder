@@ -1,0 +1,1 @@
+// Go does not support ternary operator
