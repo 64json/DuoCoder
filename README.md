@@ -1,5 +1,5 @@
 # #DuoCoder
-**http://jasonpark.me/DuoCoder/public**
+**http://jasonpark.me/DuoCoder/**
 
 ![screenshot](https://raw.githubusercontent.com/parkjs814/DuoCoder/master/branding/screenshot.png)
 
