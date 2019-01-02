@@ -1,7 +1,7 @@
 # #DuoCoder
 **http://jasonpark.me/DuoCoder/**
 
-![screenshot](https://raw.githubusercontent.com/parkjs814/DuoCoder/master/branding/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/parkjs814/DuoCoder/gh-pages/branding/screenshot.png)
 
 **DuoCoder** is inspired by **[Duolingo](https://www.duolingo.com)**, a free language-learning platform.
 
